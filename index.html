@@ -3,17 +3,40 @@
 <head>
     <title>Management Activities</title>
     <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
         #revealBtn {
-            margin-top: 10px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #revealBtn:hover {
+            background-color: #45a049;
         }
         #activityArea {
             font-weight: bold;
             font-size: 20px;
             margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background-color: white;
+        }
+        p {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
+    <h1>Management Activities</h1>
     <div id="activityArea">
         <!-- This is where each management activity will be displayed -->
     </div>
@@ -55,6 +78,9 @@
                 newParagraph.textContent = (activityIndex + 1) + '. ' + managementActivities[activityIndex];
                 activityArea.appendChild(newParagraph);
                 activityIndex++; // Move to the next activity
+
+                // Scroll to reveal button
+                revealBtn.scrollIntoView({behavior: "smooth"});
             } else {
                 // If there are no more activities to display, disable the button
                 revealBtn.disabled = true;
