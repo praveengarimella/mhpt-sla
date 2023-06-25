@@ -17,6 +17,8 @@
             font-size: 20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            position: sticky;
+            bottom: 10px;
         }
         #revealBtn:hover {
             background-color: #45a049;
@@ -33,10 +35,16 @@
         p {
             margin-bottom: 20px;
         }
+        #instructions {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <h1>Management Activities</h1>
+    <p id="instructions">The following is the sequence of management activities as suggested by the faculty. As each activity is revealed, please fill up this order in the feedback column of your spreadsheet.</p>
     <div id="activityArea">
         <!-- This is where each management activity will be displayed -->
     </div>
