@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Management Activities</title>
+    <style>
+        #revealBtn {
+            margin-top: 10px;
+        }
+        #activityArea {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="activityArea">
+        <!-- This is where each management activity will be displayed -->
+    </div>
+    <button id="revealBtn">Reveal Next Activity</button>
+    <script>
+        // Array of management activities in the correct order
+        let managementActivities = [
+            "Gather and analyze the facts of the current project situation",
+            "Set project objectives (desired results)",
+            "Develop possible alternative courses of action",
+            "Identify the negative consequences of each course of action",
+            "Decide on a basic course of action",
+            "Develops strategies (priorities, sequence, timing of major steps)",
+            "Determine when and how overall progress will be measured",
+            "Identify and analyze the various job tasks necessary to implement the project",
+            "Define scope of relationships, responsibilities, and authority of new positions",
+            "Establish qualifications for new positions",
+            "Determine the allocation of resources (including budget, facilities, etc.)",
+            "Find qualified people to fill positions",
+            "Train and develop personnel for new responsibilities/authority",
+            "Develop individual performance objectives which are mutually agreeable to the individual and his /her manager",
+            "Assign Responsibility/accountability/authority",
+            "Coordinate day-to-day activities",
+            "Measure progress toward, and /or deviation from, the project's goals",
+            "Measure individual performance against performance objectives and standards",
+            "Take corrective action on the project (recycle project plans)",
+            "Deliver appropriate consequences for individual performance"
+        ];
+
+        let activityArea = document.getElementById('activityArea');
+        let revealBtn = document.getElementById('revealBtn');
+
+        let activityIndex = 0; // Starts from the first activity
+
+        revealBtn.addEventListener('click', function() {
+            if (activityIndex < managementActivities.length) {
+                // Create a new paragraph for each activity
+                let newParagraph = document.createElement('p');
+                newParagraph.textContent = (activityIndex + 1) + '. ' + managementActivities[activityIndex];
+                activityArea.appendChild(newParagraph);
+                activityIndex++; // Move to the next activity
+            } else {
+                // If there are no more activities to display, disable the button
+                revealBtn.disabled = true;
+                revealBtn.textContent = "No More Activities to Reveal";
+            }
+        });
+    </script>
+</body>
+</html>
